@@ -1,0 +1,9 @@
+name: inpost-home-asssignment-api
+
+services:
+  tests:
+    container_name: restassured-tests
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    command: sh -c "mvn clean test -q -Dtest=ApiTestRunner || true && mvn allure:report -q"
